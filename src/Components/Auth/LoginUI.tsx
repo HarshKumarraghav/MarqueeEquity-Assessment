@@ -13,7 +13,6 @@ const LoginUI = ({ loginInfo, setLoginInfo }: Props) => {
     email: "",
     password: "",
   });
-
   useEffect(() => {
     setIsButtonDisabled(!loginInfo.email || !loginInfo.password);
   }, [loginInfo]);
@@ -24,10 +23,9 @@ const LoginUI = ({ loginInfo, setLoginInfo }: Props) => {
       console.log("Valid input");
     }
   };
-
   return (
     <section className="w-screen h-screen flex justify-center items-center backgroundImage">
-      <main className="w-4/5 h-2/4 lg:h-3/4 md:w-1/2 lg:w-1/3 flex justify-center items-center flex-col  backgroundprop">
+      <main className="w-4/5 h-3/5 lg:h-3/4 md:w-2/3 lg:w-1/3 flex justify-center items-center flex-col  backgroundprop">
         <img
           src="../../../src/assets/ME-Logo.svg"
           alt="company logo"
@@ -55,7 +53,7 @@ const LoginUI = ({ loginInfo, setLoginInfo }: Props) => {
                   setLoginInfo({ ...loginInfo, email: e.target.value })
                 }
                 placeholder="Enter your email"
-                className="w-4/5 h-12 px-5 rounded-lg shadow-md outline-none"
+                className="w-4/5 h-12 px-5 rounded-lg shadow-md outline-btncolor text-gray-600"
               />
               {validationErrors.email && (
                 <span className="text-red-500">{validationErrors.email}</span>
@@ -69,7 +67,7 @@ const LoginUI = ({ loginInfo, setLoginInfo }: Props) => {
                   setLoginInfo({ ...loginInfo, password: e.target.value })
                 }
                 placeholder="Enter your password"
-                className="w-4/5 h-12 px-5 rounded-lg shadow-md outline-none"
+                className="w-4/5 h-12 px-5 rounded-lg shadow-md outline-btncolor text-gray-600"
               />
               {validationErrors.password && (
                 <span className="text-red-500">
