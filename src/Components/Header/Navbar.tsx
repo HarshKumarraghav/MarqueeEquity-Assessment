@@ -4,7 +4,7 @@ import { useUserAuth } from "../../Context/userContext";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Navbar = () => {
   const Router = useNavigate();
   const { user, Logout } = useUserAuth();
   const [showModal, setShowModal] = useState(false);
@@ -103,4 +103,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
