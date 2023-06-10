@@ -30,5 +30,6 @@ export const validateInput = (
   }
 
   setValidationErrors(errors);
+
   return Object.keys(errors).length === 0;
 };
