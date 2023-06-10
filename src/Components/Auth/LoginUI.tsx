@@ -9,7 +9,7 @@ type Props = {
 };
 
 const LoginUI = ({ loginInfo, setLoginInfo }: Props) => {
-  const { user } = useUserAuth();
+  const { setUser } = useUserAuth();
   const Router = useNavigate();
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const [validationErrors, setValidationErrors] = useState({
@@ -44,6 +44,7 @@ missing or invalid. */
         userInfo?.password === loginInfo.password
       ) {
         localStorage.setItem("isUserLoggedIn", "true");
+        setUser(userInfo);
         Router("/home");
       } else {
         localStorage.setItem("isUserLoggedIn", "false");
@@ -51,7 +52,6 @@ missing or invalid. */
       }
     }
   };
-  console.log("user", user);
   /* This is the UI component for the login page. It contains a form with two input fields for email and
  password, and a submit button. The component also includes state variables for `isButtonDisabled`
  and `validationErrors`, which are used to disable the submit button if the email or password fields
@@ -64,7 +64,7 @@ missing or invalid. */
     <section className="w-screen h-screen flex justify-center items-center backgroundImage">
       <main className="w-4/5 h-3/5 lg:h-3/4 md:w-2/3 lg:w-1/3 flex justify-center items-center flex-col  backgroundprop">
         <img
-          src="../../../src/assets/MELogo.svg"
+          src="/assets/MELogo.svg"
           alt="company logo"
           className="w-6/12 mb-10"
         />

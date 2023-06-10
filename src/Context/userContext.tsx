@@ -19,20 +19,17 @@ const UserContext = createContext<UserContextProps>({
 
 export const UserProvider = ({ children }: any) => {
   const [user, setUser] = useState<User | null>(null);
-  useEffect(() => {
-    const isUserLoggedIn = localStorage.getItem("isUserLoggedIn");
-    if (isUserLoggedIn === "true") {
-      const user = localStorage.getItem("user_check");
-      if (user) {
-        setUser(JSON.parse(user));
-      }
-    }
-  }, []);
   const Logout = () => {
     localStorage.setItem("isUserLoggedIn", "false");
     setUser(null);
   };
 
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user_check");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
   return (
     <UserContext.Provider value={{ user, setUser, Logout }}>
       {children}
