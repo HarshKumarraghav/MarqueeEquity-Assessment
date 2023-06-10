@@ -1,8 +1,17 @@
-# JWT Authentication Mimic
+# Marquee Equity Assignment
+
+## Installation
+
+```shell
+$ https://github.com/HarshKumarraghav/MarqueeEquity-Assessment.git
+$ cd MarqueeEquity-Assessment
+$ npm install
+$ npm run dev
+```
 
 This project implements a simplified version of JWT (JSON Web Token) authentication for an application. The authentication process involves storing user credentials in the local storage and comparing them during login to grant access to the next page. The project also includes robust input validation and a responsive Todo page with subtask functionality.
 
-![Project Image](/assets/MELogo.svg)
+![Project Image](./public/assets/MELogo.svg)
 
 ## Features
 
@@ -66,9 +75,9 @@ export const validateInput = (
 };
 ```
 
-```javascript
 The Todo page is now fully responsive, and I can add subtasks to the task. Additionally, I can delete and edit the subtask, and there is also a state to show and hide the subtask. Furthermore, to prevent injection attacks, I have written a utility function that doesn't allow any HTML injection.
 
+```javascript
 export const sanitizeInput = (input: string): string => {
   // Remove special characters using regular expressions
   const sanitizedText = input.replace(/[^\w\s]/gi, "");
