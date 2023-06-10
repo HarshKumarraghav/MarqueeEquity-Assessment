@@ -24,7 +24,7 @@ const Navbar = () => {
     <div className="w-full h-16 fixed shadow-light-shadow bg-white">
       <div className="w-full h-full flex justify-between items-center px-5">
         <div className="flex items-center gap-x-4">
-          <img src="/src/assets/ME-Logo.svg" alt="" className="w-32" />
+          <img src="/src/assets/MELogo.svg" alt="" className="w-32" />
           <h1 className="hidden md:flex text-xl font-semibold">
             Welcome, {user?.name.split(" ")[0]}
           </h1>

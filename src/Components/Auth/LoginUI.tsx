@@ -64,7 +64,7 @@ missing or invalid. */
     <section className="w-screen h-screen flex justify-center items-center backgroundImage">
       <main className="w-4/5 h-3/5 lg:h-3/4 md:w-2/3 lg:w-1/3 flex justify-center items-center flex-col  backgroundprop">
         <img
-          src="../../../src/assets/ME-Logo.svg"
+          src="../../../src/assets/MELogo.svg"
           alt="company logo"
           className="w-6/12 mb-10"
         />
